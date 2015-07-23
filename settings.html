@@ -14,7 +14,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/Users/girlswhocode/Downloads/BART CHIME CHIME/58-simple-switch/58-simple-switch/css/style.css">
+    <link rel="stylesheet" href="/58-simple-switch/css/style.css">
 
 
     <!-- Custom styles for this template -->
@@ -45,7 +45,9 @@
 
 
       body{
-        background-color: #C8EDFF;
+        background: linear-gradient(#C8EDFF, #FFFFFF);
+        background-repeat: no-repeat;
+        text-align: center;
       }
     </style>
   </head>
@@ -68,9 +70,9 @@
          </div>
          <div id="navbar" class="navbar-collapse collapse">
            <ul class="nav navbar-nav">
-             <li><a href="firstpage.html">Home</a></li>
              <li><a href="index.html">Chime</a></li>
              <li><a href="settings.html">Settings</a></li>
+             <li><a href="about.html" style="text-align:center;">About Us</a></li>
            </ul>
 
          </div><!--/.nav-collapse -->
@@ -112,10 +114,23 @@
 
 </div>
 <script>
-    function startVibrate(duration) {
-	    navigator.vibrate(duration);
-    }
+    var vibrateOn = sessionStorage.getItem("vib");
 
+    function startVibrate(duration) {
+		    navigator.vibrate(duration);
+		console.log(vibrateOn);
+	      if (vibrateOn == false){
+	      	console.log("setting vibrateOn to true");
+	        vibrateOn = true;
+	        sessionStorage.setItem("vib", vibrateOn);
+	      }
+	      else {
+	      	console.log("setting vibrateOn to false");
+	        vibrateOn = false;
+	        sessionStorage.setItem("vib", vibrateOn);
+	    }
+    }
+/*
     function stopVibrate() {
 	// Clear interval and stop persistent vibrating
 	if(vibrateInterval) clearInterval(vibrateInterval);
@@ -130,7 +145,7 @@
        // Not supported
        alert("Your mobile device does not support this API!")
     }
-
+*/
 </script>
 </body>
 </html>
