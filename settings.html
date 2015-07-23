@@ -103,7 +103,7 @@
       <div class="panel-heading" style = "font-weight:bold;">Vibrate</div>
       <div class="panel-body design">Turn Vibration On
        <label class="switch align" style="float:right;">
-          <input type="checkbox" onclick = "startVibrate(1000)" class="switch-input">
+          <input type="checkbox" id = "vibrateCheckbox" onclick = "startVibrate(1000)" class="switch-input">
           <span class="switch-label" data-on="On" data-off="Off"></span>
           <span class="switch-handle"></span>
       </label>
@@ -117,9 +117,15 @@
 <script>
 	console.log("HIHIHI");
     var vibrateOn = sessionStorage.getItem("vib");
+    if(vibrateOn == false){
+    	document.getElementById("vibrateCheckbox").checked = false;
+    }
+    else{
+    	document.getElementById("vibrateCheckbox").checked = true;
+    }
 	console.log("vibrateOn at first is " + vibrateOn);
     function startVibrate(duration) {
-		    navigator.vibrate(duration);
+		navigator.vibrate(duration);
 		console.log("vibrateOn is " + vibrateOn);
 	      if (vibrateOn == false){
 	      	console.log("setting vibrateOn to true");
