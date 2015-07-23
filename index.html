@@ -160,6 +160,10 @@
   <!-- <button onclick="clickGo()" class="btn btn-info" role="button">Go</button> -->
   <button id="myButton" class="btn btn-info" role="button">Go</button>
   <script type="text/javascript">
+      if(sessionStorage.getItem("vib") === null){
+         sessionStorage.setItem("vib", false);
+      }
+  
     document.getElementById("myButton").onclick= function (){
       var option = document.getElementById('sel1').value;
       option = option.substring(0,4);
