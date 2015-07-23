@@ -160,8 +160,10 @@
   <!-- <button onclick="clickGo()" class="btn btn-info" role="button">Go</button> -->
   <button id="myButton" class="btn btn-info" role="button">Go</button>
   <script type="text/javascript">
+      console.log("sessionStorage is " + sessionStorage.getItem("vib"));
       if(sessionStorage.getItem("vib") === null){
          sessionStorage.setItem("vib", false);
+         console.log("setting session storage on index");
       }
   
     document.getElementById("myButton").onclick= function (){
