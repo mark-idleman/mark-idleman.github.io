@@ -119,9 +119,11 @@
     var vibrateOn = sessionStorage.getItem("vib");
     console.log("setting checkbox with " + vibrateOn);
     if(vibrateOn == false){
+    	console.log("COOOLLL");
     	$('#vibrate-checkbox').bootstrapSwitch('setState', false);
     }
     else{
+    	console.log("COOOLLL222222");
     	$('#vibrate-checkbox').bootstrapSwitch('setState', true);
     }
 	console.log("vibrateOn at first is " + vibrateOn);
