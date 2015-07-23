@@ -115,7 +115,7 @@
 </div>
 <script>
     var vibrateOn = sessionStorage.getItem("vib");
-
+	console.log("vibrateOn at first is " + vibrateOn);
     function startVibrate(duration) {
 		    navigator.vibrate(duration);
 		console.log("vibrateOn is " + vibrateOn);
