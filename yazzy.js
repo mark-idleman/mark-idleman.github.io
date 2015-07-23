@@ -1,6 +1,8 @@
 var watchProcess = null;
 var myLat = 0;
 var myLong = 0;
+var vibrateOn = sessionStorage.getItem("vib");
+console.log(vibrateOn);
 
 $(document).ready(function(){
     stop_watchlocation();
@@ -48,7 +50,9 @@ function handle_geolocation_query(position){
     myLong = position.coords.longitude;
     console.log('Lat: ' + position.coords.latitude +
     ' Lon: ' + position.coords.longitude);
-    if (myLat - end_lat < 0.05 || myLong - end_long < 0.05){
-      navigator.vibrate(50000);
+    if (Math.abs(myLat - end_lat) < 0.0055 && Math.abs(myLong - end_long) < 0.0055){
+      if (vibrateOn == true){
+        navigator.vibrate(50000);
+      }
     }
 }
