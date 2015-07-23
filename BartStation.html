@@ -15,7 +15,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/Users/girlswhocode/Downloads/BART CHIME CHIME/58-simple-switch/58-simple-switch/css/style.css">
+    <link rel="stylesheet" href="/58-simple-switch/58-simple-switch/css/style.css">
 
 
     <!-- Custom styles for this template -->
@@ -46,7 +46,9 @@
 
     <style>
       body{
-        background-color: #C8EDFF;
+        background: linear-gradient(#C8EDFF, #FFFFFF);
+        background-repeat: no-repeat;
+        text-align: center;
       }
       body { margin:0; padding:0; }
       #container { position:relative; margin: 0px auto; width: 80%;}
@@ -73,9 +75,9 @@
          </div>
          <div id="navbar" class="navbar-collapse collapse">
            <ul class="nav navbar-nav">
-             <li><a href="firstpage.html">Home</a></li>
              <li><a href="index.html">Chime</a></li>
              <li><a href="settings.html">Settings</a></li>
+             <li><a href="about.html">About Us</a></li>
            </ul>
 
          </div><!--/.nav-collapse -->
@@ -85,20 +87,24 @@
 
 <div id='container'>
 
-    <h1 style="padding:40px;" >Bart Stations! </h1>
+    <h1 style="padding:60px; font-family:Georgia" > Map of Bart Stations </h1>
     <div id='map'></div>
 </div>
 
 <br>
-<br>
 
 <button onclick="stopVibrate()" class="btn btn-info" role="button">Stop Vibration</button>
 
+<br>
+<br>
+<br>
+
 <script>
+
 function stopVibrate(){
 // Clear interval and stop persistent vibrating
-	navigator.vibrate(0);
 	alert("Stopped Vibration");
+  vibrateOn = false;
 }
 </script>
 
